@@ -15,7 +15,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-nfb)6xloyo*g9=*qhc$$y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'https://file-server-xsnl.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'file-server.onrender.com', 'file-server-xsnl.onrender.com']
 
 
 # Application definition
