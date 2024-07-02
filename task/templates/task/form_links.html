@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forms Menu</title>
+<link rel="stylesheet" href="{% static 'css/form_link.css' %}">
+</head>
+<body>
+    <div class="menu-container">
+        <h1>Forms Menu</h1>
+        <a href="{% url 'birthday_form' %}" class="birthday-link">Birthday Form</a>
+        <a href="{% url 'engagement_form' %}" class="engagement-link">Engagement Form</a>
+        <a href="{% url 'wedding_form' %}" class="wedding-link">Wedding Form</a>
+        <a href="{% url 'admission_form' %}" class="admission-link">Admission Form</a>
+        <a href="{% url 'admin' %}" class="back-link" onclick="history.back()">Go Back</a>
+    </div>
+</body>
+</html>

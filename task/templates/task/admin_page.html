@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static '/css/base.css' %}">
+  
+  <link rel="stylesheet" href="{% static '/css/bar.css' %}">
+</head>
+<body>
+  {% include 'task/navbar.html' %}
+  {% block content %}
+  {% endblock %}
+
+  <div class="main-content">
+    <h1>Lizzy Business</h1>
+    <a href="{% url 'cards' %}">See the available cards</a>
+    <a href="{% url 'form_link' %}">Upload Cards</a>
+    <a href="{% url 'check_page' %}">Manage Cards</a>
+  </div>
+  <div class="search-bar">
+    <!-- Maintained as a bar -->
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <h2>Wedding Cards</h2>
+      <a href="{% url 'wedding_cards' %}">View Cards</a>
+      <p>Total: {{ wedding_cards_count }}</p>
+      <p>Downloaded: {{ wedding_cards_downloaded }}</p>
+      <p>Email Sent: {{ wedding_cards_emailed }}</p>
+    </div>
+    <div class="card">
+      <h2>Engagement Cards</h2>
+      <a href="{% url 'engagement_cards' %}">View Cards</a>
+      <p>Total: {{ engagement_cards_count }}</p>
+      <p>Downloaded: {{ engagement_cards_downloaded }}</p>
+      <p>Email Sent: {{ engagement_cards_emailed }}</p> 
+    </div>
+    <div class="card">
+      <h2>Admission Cards</h2>
+      <a href="{% url 'admission_cards' %}">View Cards</a>
+      <p>Total: {{ admission_cards_count }}</p>
+      <p>Downloaded: {{ admission_cards_downloaded }}</p>
+      <p>Email Sent: {{ admission_cards_emailed }}</p>
+    </div>
+    <div class="card">
+      <h2>Birthday Cards</h2>
+      <a href="{% url 'birthday_cards' %}">View Cards</a>
+      <p>Total: {{ birthday_cards_count }}</p>
+      <p>Downloaded: {{ birthday_cards_downloaded }}</p>
+      <p>Email Sent: {{ birthday_cards_emailed }}</p>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Wedding Card</title>
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        {% block head %}
+        
+        {% endblock %}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="title">Title</label>
+            {{form.title}}
+            
+            <label for="description">Description</label>
+            {{form.description}}
+            
+            <label for="uploaded_date">Uploaded Date</label>
+            {{form.uploaded_date}}
+            
+            <label for="email">Email</label>
+            <select id="email" name="email">
+        {% for user in users %}
+    <option value="{{ user.id }}">{{ user.email }}</option>
+{% endfor %}
+</select>
+
+            
+            <label for="upload_card">Upload Card</label>
+            {{form.upload_card}}
+            
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</body>
+</html>
