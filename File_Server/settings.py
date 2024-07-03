@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-nfb)6xloyo*g9=*qhc$$y8x7x+2nmp66#9ahj@!(-plbe1hj7i')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'True')=="True"
+DEBUG = os.environ.get('DEBUG', 'True') == "True"
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'file-server.onrender.com', 'file-server-xsnl.onrender.com']
 
 
@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-     'task.apps.TaskConfig',
+    'task.apps.TaskConfig',
     'django_filters',
 ]
 
@@ -118,16 +118,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
-STATIC_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 
 # Default primary key field type

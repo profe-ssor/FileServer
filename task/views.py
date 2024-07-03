@@ -145,6 +145,8 @@ def birthday_cards(request):
 
 # Available Forms View
 
+@login_required(login_url='login')
+@user_passes_test(is_admin, login_url='login')
 def wedding_form(request):
     form = WeddingForm()
     users = MyUser.objects.all()
@@ -162,6 +164,8 @@ def wedding_form(request):
     return render(request, 'task/wedding/wedding_forms.html', context)
 
 
+@login_required(login_url='login')
+@user_passes_test(is_admin, login_url='login')
 def admission_form(request):
     form = AdmissionForm()
     users = MyUser.objects.all()
@@ -180,7 +184,8 @@ def admission_form(request):
     return render(request, 'task/admission/admission_form.html', context)
 
 
-
+@login_required(login_url='login')
+@user_passes_test(is_admin, login_url='login')
 def engagement_form(request):
     form = EngagementForm()
     users = MyUser.objects.all()
@@ -198,6 +203,8 @@ def engagement_form(request):
    
     return render(request, 'task/engagement/engagement_form.html', context )
 
+@login_required(login_url='login')
+@user_passes_test(is_admin, login_url='login')
 def birthday_form(request):
     form = BirthdayForm()
     users = MyUser.objects.all()
@@ -281,6 +288,8 @@ def crud_page(request):
 
 # Update Starts
 
+@login_required(login_url='login')
+@user_passes_test(is_admin, login_url='login')
 def update_form(request, pk, form_class, template_name):
     users = MyUser.objects.all()
     instance = get_object_or_404(form_class.Meta.model, id=pk)

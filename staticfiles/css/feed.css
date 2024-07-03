@@ -53,4 +53,17 @@ body {
     padding: 10px;
     font-size: 16px;
   }
-  
+  .file-info {
+    display: flex;
+    justify-content: space-between;
+  }
+  .file-title {
+    flex: 1;
+  }
+  .file-description {
+    flex: 1;
+    text-align: right;
+  }
+  .actions {
+    margin-top: 10px;
+  }
