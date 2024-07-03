@@ -51,7 +51,7 @@ def logoutUser(request):
     return redirect('login')
 # EndsAccouts Handling
 
-@login_required   
+@login_required(login_url='login')  
 def Customer_page(request):
     wedding_cards = WeddingCards.objects.all()
     birthday_cards = BirthdayCards.objects.all()
