@@ -356,6 +356,8 @@ def download_file(request, file_id, file_type):
     file.save()
 
     response = HttpResponse(file.upload_card, content_type='application/octet-stream')
+
+    #sets the content disposition header to display the file inline in the browser and suggests a filename.
     response['Content-Disposition'] = f'attachment; filename="{file.upload_card.name}"'
     
     return response

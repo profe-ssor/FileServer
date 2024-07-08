@@ -11,22 +11,22 @@ urlpatterns = [
 
     path(
         'reset_password/',
-        auth_views.PasswordResetView.as_view(template_name="authentication/passwords/password_reset.html"),
+        auth_views.PasswordResetView.as_view(template_name="authentication/passwods/password_reset.html"),
         name="reset_password"
     ),
     path(
         'reset_password_sent/', 
-        auth_views.PasswordResetDoneView.as_view(template_name="authentication/passwords/password_reset_sent.html"), 
+        auth_views.PasswordResetDoneView.as_view(template_name="authentication/passwods/password_reset_sent.html"), 
         name="password_reset_done"
     ),
     path(
         'reset/<uidb64>/<token>/', 
-        auth_views.PasswordResetConfirmView.as_view(template_name="authentication/passwords/password_reset_confirm.html"), 
+        auth_views.PasswordResetConfirmView.as_view(template_name="authentication/passwods/password_reset_confirm.html"), 
         name="password_reset_confirm"
     ),
     path(
         'reset_password_complete/', 
-        auth_views.PasswordResetCompleteView.as_view(template_name="authentication/passwords/password_reset_complete.html"), 
+        auth_views.PasswordResetCompleteView.as_view(template_name="authentication/passwods/password_reset_complete.html"), 
         name="password_reset_complete"
     ),
 

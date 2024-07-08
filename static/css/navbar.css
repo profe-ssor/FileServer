@@ -1,10 +1,94 @@
+
 .hello-msg {
-    font-size: 18px;
-    color: #fff;
-    margin-right: 20px;
+  font-size: 18px;
+  color: #fff;
+  margin-right: 20px;
+}
+
+.navbar-brand {
+  margin-left: 20px;
+}
+
+/* General Styles */
+body {
+  color: #000;
+  background: #00544f;
+  font-family: 'Roboto', sans-serif;
+}
+
+.main-content {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.main-content h1 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #f8f9fa;
+}
+
+.main-content a {
+  display: block;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.search-bar {
+  margin: 20px auto;
+  text-align: center;
+  width: 50%;
+  height: 38px;
+  background-color: #fff;
+}
+
+/* Responsive Grid Layout */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.card a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 767px) {
+  .card-container {
+    grid-template-columns: 1fr;
   }
-  
-  .navbar-brand {
-    margin-left: 20px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
+}
+
+@media (min-width: 992px) {
+  .card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
