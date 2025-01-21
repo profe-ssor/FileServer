@@ -51,7 +51,7 @@ def logoutUser(request):
     return redirect('login')
 # EndsAccouts Handling
 
-@login_required(login_url='login')  
+# @login_required(login_url='login')  
 def Customer_page(request):
     wedding_cards = WeddingCards.objects.all()
     birthday_cards = BirthdayCards.objects.all()
@@ -67,7 +67,7 @@ def Customer_page(request):
 def is_admin(user):
     return user.is_authenticated and user.is_staff  # or user.is_superuser based on your needs
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 @user_passes_test(is_admin, login_url='login')
 def admin_page(request):
     wedding_cards = WeddingCards.objects.all()
